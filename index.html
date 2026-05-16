@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunze Lab | University of Oregon</title>
+    <style>
+        /* Modern Design Setup */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { bg-color: #f8f9fa; color: #333; line-height: 1.6; }
+        
+        /* Brilliant Header & Nav */
+        header { background: linear-gradient(135deg, #114b3e, #1a715f); color: white; padding: 2rem 10%; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; font-weight: 700; letter-spacing: -0.5px; }
+        header p { font-size: 1.1rem; opacity: 0.9; font-style: italic; }
+        
+        nav { background: #0b332a; padding: 0.8rem 10%; display: flex; justify-content: center; gap: 2rem; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: #e0e0e0; text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s; }
+        nav a:hover { color: #fff; }
+
+        /* Container Layout */
+        .container { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; }
+        section { background: white; padding: 2.5rem; margin-bottom: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); scroll-margin-top: 60px; }
+        h2 { color: #114b3e; font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 3px solid #1a715f; padding-bottom: 0.5rem; }
+
+        /* Smooth Dropdown / Accordion Style */
+        .accordion-item { margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+        .accordion-button { width: 100%; background: #f1f5f9; border: none; padding: 1rem 1.5rem; text-align: left; font-size: 1.1rem; font-weight: 600; color: #114b3e; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
+        .accordion-button:hover { background: #e2e8f0; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: white; }
+        .accordion-content p { padding: 1.5rem; color: #4a5568; }
+
+        /* Contact Details */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+        .contact-card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1a715f; }
+        .contact-card h4 { color: #114b3e; margin-bottom: 0.5rem; }
+
+        footer { text-align: center; padding: 2rem; color: #718096; font-size: 0.9rem; border-top: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Kunze Lab</h1>
+        <p>Special Education & Behavioral Research • University of Oregon</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research Dropdowns</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>About Dr. Kunze</h2>
+            <p>Welcome to the official research portal for Dr. Megan Kunze at the University of Oregon. This lab is dedicated to advancing field research, supporting students, and developing innovative solutions in education.</p>
+            <br>
+            <p>Type a longer, detailed paragraph here about her background, her teaching philosophy, her history at U of O, and what goals her lab wants to achieve.</p>
+        </section>
+
+        <section id="research">
+            <h2>Current Research & Projects</h2>
+            <p style="margin-bottom: 1.5rem; color: #666;">Click on any project below to expand the details.</p>
+
+            <div class="accordion-item">
+                <button class="accordion-button" onclick="toggleAccordion(this)">
+                    Project Title One <span>▼</span>
+                </button>
+                <div class="accordion-content">
+                    <p>This is where the intricate details of Project One go. You can type out the hypotheses, the current testing methods, funding sources, and student involvement details. It stays perfectly hidden until a user clicks it!</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button" onclick="toggleAccordion(this)">
+                    Project Title Two <span>▼</span>
+                </button>
+                <div class="accordion-content">
+                    <p>This is where the intricate details of Project Two go. Perfect for keeping the page tidy while still hosting a massive amount of academic data for peers or grant committees to review.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button" onclick="toggleAccordion(this)">
+                    Published Papers & Literature <span>▼</span>
+                </button>
+                <div class="accordion-content">
+                    <p>• Kunze, M., et al. (2026). Modern Classroom Behavioral Adaptations. *Journal of Special Education*.<br><br>
+                       • Kunze, M. (2025). Data-Driven Academic Environments. *Northwest Research Quarterly*.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>Email</h4>
+                    <p>mkunze@uoregon.edu</p>
+                </div>
+                <div class="contact-card">
+                    <h4>Office Location</h4>
+                    <p>University of Oregon<br>Building Name, Room 123</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Kunze Lab • University of Oregon. All rights reserved.
+    </footer>
+
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const arrow = button.querySelector('span');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+                content.style.maxHeight = "0px";
+                arrow.textContent = "▼";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                arrow.textContent = "▲";
+            }
+        }
+    </script>
+
+</body>
+</html>
