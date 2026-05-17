@@ -5,59 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Megan Kunze | University of Oregon</title>
     <style>
-        /* Modern Design System */
+        /* Whimsical & Friendly Design Setup */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
-        body { background-color: #f4f6f8; color: #2d3748; line-height: 1.7; }
+        body { background-color: #faf8f5; color: #334155; line-height: 1.7; }
         
-        /* Premium Academic Header */
-        header { background: linear-gradient(135deg, #114b3e, #062c24); color: #fff; padding: 3.5rem 10%; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-bottom: 5px solid #fee123; }
-        header h1 { font-size: 3rem; margin-bottom: 0.5rem; font-weight: 800; letter-spacing: -0.5px; }
-        header p { font-size: 1.2rem; opacity: 0.9; font-weight: 400; max-width: 800px; margin: 0 auto; }
-        header .badges { margin-top: 1rem; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        header .badge { background: rgba(255,255,255,0.15); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.25); }
-
-        /* Sticky Navigation Bar */
-        nav { background: #0b332a; padding: 0px 10%; display: flex; justify-content: center; gap: 1.5rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); flex-wrap: wrap; }
-        nav a { color: #e2e8f0; text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 1.2rem 0.5rem; transition: all 0.3s; border-bottom: 3px solid transparent; }
-        nav a:hover { color: #fee123; border-bottom: 3px solid #fee123; }
-
-        /* Main Page Layout */
-        .container { max-width: 1150px; margin: 3rem auto; padding: 0 2rem; }
-        section { background: white; padding: 3rem; margin-bottom: 3rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); scroll-margin-top: 80px; transition: transform 0.3s; }
-        h2 { color: #114b3e; font-size: 2.1rem; margin-bottom: 1.8rem; border-bottom: 3px solid #cbd5e1; padding-bottom: 0.6rem; display: flex; align-items: center; justify-content: space-between; }
+        /* Soft, Curved Header with Wave SVG Effect */
+        header { 
+            background: linear-gradient(135deg, #2a6f60, #1e5146); 
+            color: #fff; 
+            padding: 4rem 10% 5rem 10%; 
+            text-align: center; 
+            position: relative;
+        }
+        header h1 { font-family: 'Georgia', serif; font-size: 3.2rem; margin-bottom: 0.5rem; font-weight: 700; }
+        header p { font-size: 1.25rem; opacity: 0.95; max-width: 800px; margin: 0 auto; font-weight: 400; }
         
-        /* Biography Accents */
-        .bio-text p { margin-bottom: 1.2rem; font-size: 1.05rem; color: #4a5568; }
-        .highlight-box { background: #e6f4f1; border-left: 5px solid #1a715f; padding: 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 1.5rem; font-style: italic; }
+        /* Badges */
+        header .badges { margin-top: 1.2rem; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        header .badge { background: rgba(254, 225, 35, 0.2); color: #fee123; padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; border: 1.5px solid #fee123; }
 
-        /* Dynamic Expandable Research Sections */
-        .accordion-item { margin-bottom: 1.2rem; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.01); }
-        .accordion-button { width: 100%; background: #f8fafc; border: none; padding: 1.2rem 1.8rem; text-align: left; font-size: 1.15rem; font-weight: 700; color: #114b3e; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
-        .accordion-button:hover { background: #f1f5f9; }
-        .accordion-button span { font-size: 0.9rem; color: #64748b; transition: transform 0.3s; }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: white; }
-        .accordion-content-inner { padding: 1.8rem; color: #4a5568; font-size: 1rem; border-top: 1px solid #f1f5f9; }
-        .project-tag { display: inline-block; background: #1a715f; color: white; padding: 3px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem; }
+        /* The Decorative Wave Separator */
+        .wave-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-container svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 40px;
+        }
+        .wave-container .wave-bg { fill: #faf8f5; }
 
-        /* Grant Section Layout */
-        .grant-card { background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #fee123; }
-        .grant-title { font-weight: 700; color: #114b3e; font-size: 1.1rem; }
-        .grant-meta { font-size: 0.9rem; color: #718096; margin-top: 0.2rem; }
+        /* Friendly Navigation Sticky Bar */
+        nav { background: #19443a; padding: 0.2rem 10%; display: flex; justify-content: center; gap: 1.5rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.05); flex-wrap: wrap; }
+        nav a { color: #e2e8f0; text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 1rem 0.8rem; transition: all 0.3s ease; border-radius: 20px; margin: 4px 0; }
+        nav a:hover { color: #19443a; background-color: #fee123; }
 
-        /* List Formatting (Publications & Classes) */
-        .pub-list, .course-list { list-style: none; }
-        .pub-list li, .course-list li { position: relative; padding-left: 1.8rem; margin-bottom: 1.2rem; font-size: 1rem; color: #334155; }
-        .pub-list li::before { content: "📚"; position: absolute; left: 0; top: 2px; font-size: 1rem; }
-        .course-list li::before { content: "🎓"; position: absolute; left: 0; top: 2px; font-size: 1rem; }
+        /* Main Cozy Content Container */
+        .container { max-width: 1050px; margin: 2rem auto; padding: 0 2rem; }
+        section { background: white; padding: 3rem; margin-bottom: 2.5rem; border-radius: 24px; box-shadow: 0 8px 24px rgba(168, 180, 170, 0.15); scroll-margin-top: 80px; border: 1px solid #edf2f7; }
+        
+        h2 { font-family: 'Georgia', serif; color: #2a6f60; font-size: 2.2rem; margin-bottom: 1.8rem; display: flex; align-items: center; gap: 10px; }
+        
+        /* Warm Highlight Accents */
+        .bio-text p { margin-bottom: 1.2rem; font-size: 1.08rem; color: #4a5568; }
+        .highlight-box { background: #f0f7f4; border-left: 6px solid #2a6f60; padding: 1.8rem; border-radius: 12px; margin-bottom: 1.8rem; font-size: 1.1rem; color: #235348; font-weight: 500; }
 
-        /* Multi-Column Contact Section */
+        /* Bouncy Expandable Accordion Dropdowns */
+        .accordion-item { margin-bottom: 1.2rem; border: 2px solid #e6ebec; border-radius: 16px; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .accordion-item:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(42, 111, 96, 0.08); border-color: #cbdad7; }
+        
+        .accordion-button { width: 100%; background: #f7faf9; border: none; padding: 1.4rem 1.8rem; text-align: left; font-size: 1.2rem; font-weight: 700; color: #1e5146; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-button span { background: #e1edea; color: #2a6f60; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.8rem; transition: transform 0.3s ease; }
+        
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1); background: white; }
+        .accordion-content-inner { padding: 2rem; color: #4a5568; font-size: 1.05rem; border-top: 2px solid #f7faf9; }
+        
+        .project-tag { display: inline-block; background: #e2f2ee; color: #1e5146; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Whimsical Grant Cards */
+        .grant-card { background: #fffcf4; border: 2px dashed #fcd34d; border-radius: 16px; padding: 1.8rem; margin-bottom: 1.2rem; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+        .grant-title { font-weight: 700; color: #1e5146; font-size: 1.15rem; margin-bottom: 0.4rem; }
+        .grant-meta { font-size: 0.95rem; color: #64748b; }
+        .grant-amount { align-self: flex-start; background: #fee123; color: #19443a; font-weight: 800; padding: 4px 12px; border-radius: 8px; margin-top: 0.6rem; font-size: 0.95rem; }
+
+        /* Custom Icon Lists */
+        .custom-list { list-style: none; }
+        .custom-list li { position: relative; padding-left: 2.2rem; margin-bottom: 1.4rem; font-size: 1.05rem; color: #334155; }
+        .custom-list.pubs li::before { content: "🌱"; position: absolute; left: 0; top: 2px; font-size: 1.2rem; }
+        .custom-list.courses li::before { content: "☀️"; position: absolute; left: 0; top: 2px; font-size: 1.2rem; }
+
+        /* Grid Contacts */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .contact-card { background: #f8fafc; padding: 1.8rem; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center; }
-        .contact-card h4 { color: #114b3e; font-size: 1.2rem; margin-bottom: 0.5rem; }
-        .contact-card a { color: #1a715f; text-decoration: none; font-weight: bold; }
-        .contact-card a:hover { text-decoration: underline; }
+        .contact-card { background: #fdfdfd; padding: 2rem; border-radius: 20px; border: 2px solid #edf2f7; text-align: center; transition: border-color 0.3s; }
+        .contact-card:hover { border-color: #fee123; }
+        .contact-card h4 { color: #2a6f60; font-size: 1.25rem; margin-bottom: 0.6rem; font-family: 'Georgia', serif; }
+        .contact-card a { color: #2a6f60; text-decoration: none; font-weight: 700; border-bottom: 2px dashed #fee123; }
 
-        footer { text-align: center; padding: 3rem; color: #64748b; font-size: 0.95rem; border-top: 1px solid #e2e8f0; background: #fff; margin-top: 5rem; }
+        footer { text-align: center; padding: 4rem 2rem; color: #64748b; font-size: 0.95rem; background: #fff; margin-top: 6rem; border-top: 1px solid #edf2f7; }
     </style>
 </head>
 <body>
@@ -70,6 +100,12 @@
             <span class="badge">BCBA-D</span>
             <span class="badge">LBA</span>
             <span class="badge">Fulbright Specialist</span>
+        </div>
+        
+        <div class="wave-container">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16,-30.13,172,-41.86c82.39,-16.72,168.19,-17.73,250.45,-0.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V1200H1200V0Z" class="wave-bg"></path>
+            </svg>
         </div>
     </header>
 
@@ -85,7 +121,7 @@
     <div class="container">
         
         <section id="about">
-            <h2>About Dr. Kunze</h2>
+            <h2>✨ About Dr. Kunze</h2>
             <div class="bio-text">
                 <div class="highlight-box">
                     Advancing early intervention, applied behavior analysis, and family-focused naturalistic interventions to support young children with developmental differences.
@@ -96,8 +132,8 @@
         </section>
 
         <section id="research">
-            <h2>Research & Lab Projects</h2>
-            <p style="margin-bottom: 1.5rem; color: #64748b;">Click on any project below to expand full details and methodologies.</p>
+            <h2>🔬 Research & Lab Projects</h2>
+            <p style="margin-bottom: 1.8rem; color: #64748b;">Click on any project box below to expand full details and methodologies.</p>
 
             <div class="accordion-item">
                 <button class="accordion-button" onclick="toggleAccordion(this)">
@@ -149,32 +185,44 @@
         </section>
 
         <section id="grants">
-            <h2>Major Research Grants</h2>
+            <h2>💰 Major Research Grants</h2>
             
             <div class="grant-card">
-                <div class="grant-title">Project VOICE (Valuing Opportunities for Interdisciplinary Collaboration in Early Communication)</div>
-                <div class="grant-meta">Personnel Development Grant • Office of Special Education Programs | <strong>$1,250,000</strong> (2025 - 2029)</div>
+                <div>
+                    <div class="grant-title">Project VOICE (Valuing Opportunities for Interdisciplinary Collaboration in Early Communication)</div>
+                    <div class="grant-meta">Personnel Development Grant • Office of Special Education Programs (2025 - 2029)</div>
+                </div>
+                <div class="grant-amount">$1,250,000</div>
             </div>
 
             <div class="grant-card">
-                <div class="grant-title">Implementation and Evaluation of the TBI System of Support for Kids (Phase 1 & 2)</div>
-                <div class="grant-meta">Toyota Way Forward Fund • Co-Primary Investigator | <strong>$1,999,511 Combined</strong> (2024 - 2026)</div>
+                <div>
+                    <div class="grant-title">Implementation and Evaluation of the TBI System of Support for Kids (Phase 1 & 2)</div>
+                    <div class="grant-meta">Toyota Way Forward Fund • Co-Primary Investigator (2024 - 2026)</div>
+                </div>
+                <div class="grant-amount">$1,999,511 Combined</div>
             </div>
 
             <div class="grant-card">
-                <div class="grant-title">Oregon Veteran’s Project & TOTS for Military Families</div>
-                <div class="grant-meta">Veteran and Military Behavioral Health-Oregon Health Authority • PI & Co-I | <strong>$233,000 Combined</strong> (2024 - 2026)</div>
+                <div>
+                    <div class="grant-title">Oregon Veteran’s Project & TOTS for Military Families</div>
+                    <div class="grant-meta">Veteran and Military Behavioral Health-Oregon Health Authority • PI & Co-I (2024 - 2026)</div>
+                </div>
+                <div class="grant-amount">$233,000 Combined</div>
             </div>
 
             <div class="grant-card">
-                <div class="grant-title">PRRFCT Match Intervention Fellowship</div>
-                <div class="grant-meta">NIDILRR Foundation Switzer Research Fellowship • Principal Investigator | <strong>$70,000</strong> (2021 - 2022)</div>
+                <div>
+                    <div class="grant-title">PRRFCT Match Intervention Fellowship</div>
+                    <div class="grant-meta">NIDILRR Foundation Switzer Research Fellowship • Principal Investigator (2021 - 2022)</div>
+                </div>
+                <div class="grant-amount">$70,000</div>
             </div>
         </section>
 
         <section id="publications">
-            <h2>Selected Refereed Publications</h2>
-            <ul class="pub-list">
+            <h2>📚 Selected Refereed Publications</h2>
+            <ul class="custom-list pubs">
                 <li><strong>Kunze, M.</strong>, Wei, Q., Bacon-Yates, A., Pompan, E., Lockwood, H., & Witthuhn, N. (2024). Promoting reciprocal relationships with flexibility, coaching, and teaching (PRRFCT Match): A virtual parent-mediated intervention package for young children with developmental disabilities. <em>Journal of Autism and Developmental Disorders</em>.</li>
                 <li><strong>Kunze, M.</strong>, Gomez, D., Glenn, E., Todis, B., Riddle, I., Karns, K., Glang, A., & McIntyre, L. L. (2023). Parenting young children with developmental disabilities: Exploring mothers’ experiences during the COVID-19 pandemic. <em>Journal of Childhood, Education, & Society</em>.</li>
                 <li><strong>Kunze, M.</strong>, & De la Cruz, B. (2023). A longitudinal study of behavioral consultation in inclusive preschool classrooms. <em>National Head Start Association Dialog</em>.</li>
@@ -184,9 +232,9 @@
         </section>
 
         <section id="teaching">
-            <h2>Instructional & Academic Courses</h2>
+            <h2>🏫 Instructional & Academic Courses</h2>
             <p style="margin-bottom: 1.5rem; color: #4a5568;">Dr. Kunze coordinates core graduate courses inside the College of Education targeting specialized practices, family systems, and intervention architecture:</p>
-            <ul class="course-list">
+            <ul class="custom-list courses">
                 <li><strong>SPED 681:</strong> Diverse Families in Early Intervention (Graduate Level Core)</li>
                 <li><strong>SPED 680:</strong> Foundations in Early Intervention & Early Childhood Special Education</li>
                 <li><strong>SPED 610:</strong> Autism Intervention I: Functional Behavior Assessment (FBA)</li>
@@ -196,7 +244,7 @@
         </section>
 
         <section id="contact">
-            <h2>Contact Information</h2>
+            <h2>👋 Let's Connect!</h2>
             <div class="contact-grid">
                 <div class="contact-card">
                     <h4>Email Address</h4>
@@ -227,9 +275,11 @@
             if (content.style.maxHeight && content.style.maxHeight !== "0px") {
                 content.style.maxHeight = "0px";
                 arrow.textContent = "▼";
+                arrow.style.transform = "rotate(0deg)";
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
                 arrow.textContent = "▲";
+                arrow.style.transform = "rotate(180deg)";
             }
         }
     </script>
