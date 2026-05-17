@@ -3,51 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunze Lab | University of Oregon</title>
+    <title>Dr. Megan Kunze | University of Oregon</title>
     <style>
-        /* Modern Design Setup */
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        /* Modern Design System */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+        body { background-color: #f4f6f8; color: #2d3748; line-height: 1.7; }
         
-        /* Brilliant Header & Nav */
-        header { background: linear-gradient(135deg, #114b3e, #1a715f); color: white; padding: 2rem 10%; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; font-weight: 700; letter-spacing: -0.5px; }
-        header p { font-size: 1.1rem; opacity: 0.9; font-style: italic; }
+        /* Premium Academic Header */
+        header { background: linear-gradient(135deg, #114b3e, #062c24); color: #fff; padding: 3.5rem 10%; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-bottom: 5px solid #fee123; }
+        header h1 { font-size: 3rem; margin-bottom: 0.5rem; font-weight: 800; letter-spacing: -0.5px; }
+        header p { font-size: 1.2rem; opacity: 0.9; font-weight: 400; max-width: 800px; margin: 0 auto; }
+        header .badges { margin-top: 1rem; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        header .badge { background: rgba(255,255,255,0.15); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.25); }
+
+        /* Sticky Navigation Bar */
+        nav { background: #0b332a; padding: 0px 10%; display: flex; justify-content: center; gap: 1.5rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); flex-wrap: wrap; }
+        nav a { color: #e2e8f0; text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 1.2rem 0.5rem; transition: all 0.3s; border-bottom: 3px solid transparent; }
+        nav a:hover { color: #fee123; border-bottom: 3px solid #fee123; }
+
+        /* Main Page Layout */
+        .container { max-width: 1150px; margin: 3rem auto; padding: 0 2rem; }
+        section { background: white; padding: 3rem; margin-bottom: 3rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); scroll-margin-top: 80px; transition: transform 0.3s; }
+        h2 { color: #114b3e; font-size: 2.1rem; margin-bottom: 1.8rem; border-bottom: 3px solid #cbd5e1; padding-bottom: 0.6rem; display: flex; align-items: center; justify-content: space-between; }
         
-        nav { background: #0b332a; padding: 0.8rem 10%; display: flex; justify-content: center; gap: 2rem; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: #e0e0e0; text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s; }
-        nav a:hover { color: #fff; }
+        /* Biography Accents */
+        .bio-text p { margin-bottom: 1.2rem; font-size: 1.05rem; color: #4a5568; }
+        .highlight-box { background: #e6f4f1; border-left: 5px solid #1a715f; padding: 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 1.5rem; font-style: italic; }
 
-        /* Container Layout */
-        .container { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; }
-        section { background: white; padding: 2.5rem; margin-bottom: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); scroll-margin-top: 60px; }
-        h2 { color: #114b3e; font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 3px solid #1a715f; padding-bottom: 0.5rem; }
-
-        /* Smooth Dropdown / Accordion Style */
-        .accordion-item { margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
-        .accordion-button { width: 100%; background: #f1f5f9; border: none; padding: 1rem 1.5rem; text-align: left; font-size: 1.1rem; font-weight: 600; color: #114b3e; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
-        .accordion-button:hover { background: #e2e8f0; }
+        /* Dynamic Expandable Research Sections */
+        .accordion-item { margin-bottom: 1.2rem; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.01); }
+        .accordion-button { width: 100%; background: #f8fafc; border: none; padding: 1.2rem 1.8rem; text-align: left; font-size: 1.15rem; font-weight: 700; color: #114b3e; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
+        .accordion-button:hover { background: #f1f5f9; }
+        .accordion-button span { font-size: 0.9rem; color: #64748b; transition: transform 0.3s; }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: white; }
-        .accordion-content p { padding: 1.5rem; color: #4a5568; }
+        .accordion-content-inner { padding: 1.8rem; color: #4a5568; font-size: 1rem; border-top: 1px solid #f1f5f9; }
+        .project-tag { display: inline-block; background: #1a715f; color: white; padding: 3px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem; }
 
-        /* Contact Details */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
-        .contact-card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1a715f; }
-        .contact-card h4 { color: #114b3e; margin-bottom: 0.5rem; }
+        /* Grant Section Layout */
+        .grant-card { background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #fee123; }
+        .grant-title { font-weight: 700; color: #114b3e; font-size: 1.1rem; }
+        .grant-meta { font-size: 0.9rem; color: #718096; margin-top: 0.2rem; }
 
-        footer { text-align: center; padding: 2rem; color: #718096; font-size: 0.9rem; border-top: 1px solid #e2e8f0; }
+        /* List Formatting (Publications & Classes) */
+        .pub-list, .course-list { list-style: none; }
+        .pub-list li, .course-list li { position: relative; padding-left: 1.8rem; margin-bottom: 1.2rem; font-size: 1rem; color: #334155; }
+        .pub-list li::before { content: "📚"; position: absolute; left: 0; top: 2px; font-size: 1rem; }
+        .course-list li::before { content: "🎓"; position: absolute; left: 0; top: 2px; font-size: 1rem; }
+
+        /* Multi-Column Contact Section */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .contact-card { background: #f8fafc; padding: 1.8rem; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center; }
+        .contact-card h4 { color: #114b3e; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .contact-card a { color: #1a715f; text-decoration: none; font-weight: bold; }
+        .contact-card a:hover { text-decoration: underline; }
+
+        footer { text-align: center; padding: 3rem; color: #64748b; font-size: 0.95rem; border-top: 1px solid #e2e8f0; background: #fff; margin-top: 5rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Kunze Lab</h1>
-        <p>Special Education & Clinical Sciences • University of Oregon</p>
+        <h1>Dr. Megan Kunze</h1>
+        <p>Assistant Research Professor • University of Oregon</p>
+        <div class="badges">
+            <span class="badge">PhD</span>
+            <span class="badge">BCBA-D</span>
+            <span class="badge">LBA</span>
+            <span class="badge">Fulbright Specialist</span>
+        </div>
     </header>
 
     <nav>
         <a href="#about">About</a>
         <a href="#research">Research & Projects</a>
+        <a href="#grants">Grants & Funding</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -55,54 +86,129 @@
         
         <section id="about">
             <h2>About Dr. Kunze</h2>
-            <p>Welcome to the official research portal for Dr. Megan Kunze, Research Assistant Professor in the Department of Special Education and Clinical Sciences at the University of Oregon.</p>
-            <br>
-            <p>This lab focuses on improving outcomes for individuals with disabilities, developing behavioral interventions, and supporting families and educators through evidence-based practices.</p>
+            <div class="bio-text">
+                <div class="highlight-box">
+                    Advancing early intervention, applied behavior analysis, and family-focused naturalistic interventions to support young children with developmental differences.
+                </div>
+                <p>Dr. Megan Kunze is an Assistant Research Professor at the University of Oregon, serving as the Associate Director of the Center on Brain Injury Research and Training (CBIRT) within the Department of Psychology. She holds core affiliations across the College of Education's Department of Special Education and Clinical Sciences and the Prevention Science Institute.</p>
+                <p>With over 30 years of experience supporting children, families, and early childhood specialists, Dr. Kunze is a Board Certified Behavior Analyst-Doctorate (BCBA-D) and Licensed Behavior Analyst. Her clinical leadership spans directing inclusive child development centers, early intervention facilities, and therapeutic clinics. She serves as a vital community resource and behavior expert for both the Autism ECHO for Oregon and the Ukraine ECHO panels, extending clinical knowledge to medical and educational professionals worldwide.</p>
+            </div>
         </section>
 
         <section id="research">
-            <h2>Current Research & Projects</h2>
-            <p style="margin-bottom: 1.5rem; color: #666;">Click on any project below to expand the details.</p>
+            <h2>Research & Lab Projects</h2>
+            <p style="margin-bottom: 1.5rem; color: #64748b;">Click on any project below to expand full details and methodologies.</p>
 
             <div class="accordion-item">
                 <button class="accordion-button" onclick="toggleAccordion(this)">
-                    Project Title One <span>▼</span>
+                    <div><span class="project-tag">Principal Investigator</span> <br>Web-Based Three-Tiered Model (TOTS) for Military Families</div>
+                    <span>▼</span>
                 </button>
                 <div class="accordion-content">
-                    <p>This is where the intricate details of Project One go. You can type out the hypotheses, the current testing methods, funding sources, and student involvement details. It stays perfectly hidden until a user clicks it!</p>
+                    <div class="accordion-content-inner">
+                        <p>This project adapts the Tiered Online Training and Support (TOTS) parent training framework to address the specific challenges faced by military, reserve, and veteran families during deployment and family reunification. The research focuses on deploying an evidence-based, fully online coaching interface aimed at decreasing child behavioral difficulties and bolstering psychological resiliency at the family unit level.</p>
+                    </div>
                 </div>
             </div>
 
             <div class="accordion-item">
                 <button class="accordion-button" onclick="toggleAccordion(this)">
-                    Project Title Two <span>▼</span>
+                    <div><span class="project-tag">Principal Investigator</span> <br>PRRFCT Match & PRRFCT Match-Spanish</div>
+                    <span>▼</span>
                 </button>
                 <div class="accordion-content">
-                    <p>This is where the intricate details of Project Two go. Perfect for keeping the page tidy while still hosting a massive amount of academic data for peers or grant committees to review.</p>
+                    <div class="accordion-content-inner">
+                        <p>Promoting Reciprocal Relationships with Flexibility, Coaching, and Teaching (PRRFCT Match) evaluates parent-mediated early intervention delivery via telehealth. Utilizing early career intervention specialists, this program targets the expansion of flexible play environments and interactive behaviors for young children with intellectual and developmental disabilities. The project includes a dedicated linguistic and cultural adaptation program specifically tailored for Spanish-speaking families.</p>
+                    </div>
                 </div>
             </div>
 
             <div class="accordion-item">
                 <button class="accordion-button" onclick="toggleAccordion(this)">
-                    Published Papers & Literature <span>▼</span>
+                    <div><span class="project-tag">Co-Primary Investigator</span> <br>TBI System of Support for Kids</div>
+                    <span>▼</span>
                 </button>
                 <div class="accordion-content">
-                    <p>• Kunze, M., et al. (2026). Modern Classroom Behavioral Adaptations. *Journal of Special Education*.<br><br>
-                       • Kunze, M. (2025). Data-Driven Academic Environments. *Northwest Research Quarterly*.</p>
+                    <div class="accordion-content-inner">
+                        <p>A multi-tiered state and community-driven initiative focused on traumatic brain injury (TBI) awareness, identification, and care tracking. This research develops caregiver and educational curricula stretching from early childhood settings through high schools, ensuring consistent infrastructure across school, medical, family, and legislative components.</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button" onclick="toggleAccordion(this)">
+                    <div><span class="project-tag">Co-Investigator</span> <br>Alaska Juvenile Justice TBI Identification Project</div>
+                    <span>▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>This validation research centers on utilizing screening protocols to identify head injuries and subsequent executive functioning constraints among justice-involved youth. The core goal of this research is validating systemic alternatives highlighting early neuro-educational intervention over structural incarceration pathways.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grants">
+            <h2>Major Research Grants</h2>
+            
+            <div class="grant-card">
+                <div class="grant-title">Project VOICE (Valuing Opportunities for Interdisciplinary Collaboration in Early Communication)</div>
+                <div class="grant-meta">Personnel Development Grant • Office of Special Education Programs | <strong>$1,250,000</strong> (2025 - 2029)</div>
+            </div>
+
+            <div class="grant-card">
+                <div class="grant-title">Implementation and Evaluation of the TBI System of Support for Kids (Phase 1 & 2)</div>
+                <div class="grant-meta">Toyota Way Forward Fund • Co-Primary Investigator | <strong>$1,999,511 Combined</strong> (2024 - 2026)</div>
+            </div>
+
+            <div class="grant-card">
+                <div class="grant-title">Oregon Veteran’s Project & TOTS for Military Families</div>
+                <div class="grant-meta">Veteran and Military Behavioral Health-Oregon Health Authority • PI & Co-I | <strong>$233,000 Combined</strong> (2024 - 2026)</div>
+            </div>
+
+            <div class="grant-card">
+                <div class="grant-title">PRRFCT Match Intervention Fellowship</div>
+                <div class="grant-meta">NIDILRR Foundation Switzer Research Fellowship • Principal Investigator | <strong>$70,000</strong> (2021 - 2022)</div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Refereed Publications</h2>
+            <ul class="pub-list">
+                <li><strong>Kunze, M.</strong>, Wei, Q., Bacon-Yates, A., Pompan, E., Lockwood, H., & Witthuhn, N. (2024). Promoting reciprocal relationships with flexibility, coaching, and teaching (PRRFCT Match): A virtual parent-mediated intervention package for young children with developmental disabilities. <em>Journal of Autism and Developmental Disorders</em>.</li>
+                <li><strong>Kunze, M.</strong>, Gomez, D., Glenn, E., Todis, B., Riddle, I., Karns, K., Glang, A., & McIntyre, L. L. (2023). Parenting young children with developmental disabilities: Exploring mothers’ experiences during the COVID-19 pandemic. <em>Journal of Childhood, Education, & Society</em>.</li>
+                <li><strong>Kunze, M.</strong>, & De la Cruz, B. (2023). A longitudinal study of behavioral consultation in inclusive preschool classrooms. <em>National Head Start Association Dialog</em>.</li>
+                <li>Gomez, D., <strong>Kunze, M.</strong>, Glenn, E., Todis, B., Kelley, K., Karns, C. M., Glang, A., & McIntyre, L. L. (2022). Professionals’ perspectives on service delivery: The impact of COVID-19 on early childhood special education providers. <em>Topics in Early Childhood Special Education</em>.</li>
+                <li><strong>Kunze, M.</strong>, & Machalicek, W. (2021). Interdisciplinary teams in schools: A model to support students with autism. <em>Psychology in the Schools</em>.</li>
+            </ul>
+        </section>
+
+        <section id="teaching">
+            <h2>Instructional & Academic Courses</h2>
+            <p style="margin-bottom: 1.5rem; color: #4a5568;">Dr. Kunze coordinates core graduate courses inside the College of Education targeting specialized practices, family systems, and intervention architecture:</p>
+            <ul class="course-list">
+                <li><strong>SPED 681:</strong> Diverse Families in Early Intervention (Graduate Level Core)</li>
+                <li><strong>SPED 680:</strong> Foundations in Early Intervention & Early Childhood Special Education</li>
+                <li><strong>SPED 610:</strong> Autism Intervention I: Functional Behavior Assessment (FBA)</li>
+                <li><strong>SPED 610:</strong> Assessment in Special Education</li>
+                <li><strong>SPED 410:</strong> Overview of Autism (Undergraduate Special Education Pathway)</li>
+            </ul>
         </section>
 
         <section id="contact">
             <h2>Contact Information</h2>
             <div class="contact-grid">
                 <div class="contact-card">
-                    <h4>Email</h4>
-                    <p><a href="mailto:mkunze@uoregon.edu" style="color: #1a715f; text-decoration: none; font-weight: bold;">mkunze@uoregon.edu</a></p>
+                    <h4>Email Address</h4>
+                    <p><a href="mailto:mkunze@uoregon.edu">mkunze@uoregon.edu</a></p>
                 </div>
                 <div class="contact-card">
-                    <h4>Office Location</h4>
-                    <p>University of Oregon<br>HEDCO Education Building</p>
+                    <h4>Primary Affiliation</h4>
+                    <p>Center on Brain Injury Research & Training<br>HEDCO Education Building</p>
+                </div>
+                <div class="contact-card">
+                    <h4>Mailing Address</h4>
+                    <p>University of Oregon<br>Eugene, OR 97403</p>
                 </div>
             </div>
         </section>
@@ -110,7 +216,7 @@
     </div>
 
     <footer>
-        &copy; 2026 Kunze Lab • University of Oregon. All rights reserved.
+        &copy; 2026 Kunze Lab • University of Oregon. All Rights Reserved.
     </footer>
 
     <script>
