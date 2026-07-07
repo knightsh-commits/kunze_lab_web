@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Megan Kunze | University of Oregon</title>
+  <meta name="description" content="Faculty website for Dr. Megan Kunze, Assistant Research Professor at the University of Oregon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Home">
+          <div class="brand-mark">MK</div>
+          <div class="brand-text">
+            <strong>Dr. Megan Kunze</strong>
+            <span>University of Oregon</span>
+          </div>
+        </a>
+        <div class="nav-wrap">
+          <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>Menu</button>
+          <nav class="nav" data-nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <div class="dropdown" data-dropdown>
+              <button class="dropdown-trigger" type="button" data-dropdown-trigger aria-expanded="false">More</button>
+              <div class="dropdown-menu">
+                <a href="teaching.html">Teaching</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
 
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-card" data-animate>
+            <div class="kicker">Behavior analysis · early intervention · family-centered research</div>
+            <h1>Research that supports children and families.</h1>
+            <p>
+              Dr. Megan Kunze is an Assistant Research Professor at the University of Oregon whose work focuses on
+              family interventions, supporting young children with autism, traumatic brain injury, and other developmental
+              differences, and building practical systems of care through naturalistic applied behavior analysis.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="about.html">Read bio</a>
+              <a class="btn btn-secondary" href="research.html">Explore research</a>
+            </div>
+          </div>
+
+          <div class="hero-aside" data-animate>
+            <div class="info-card avatar">
+              <span>Warm, polished, and research-focused</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat">
+                <strong>30+</strong>
+                <span>years in early intervention and education</span>
+              </div>
+              <div class="stat">
+                <strong>2004</strong>
+                <span>behavior analyst certification began</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container section-tone">
+          <div class="section-head">
+            <div>
+              <h2>Highlights from the CV</h2>
+              <p>These pages pull together the strongest parts of her academic profile so visitors can quickly understand her work.</p>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <a class="panel" href="about.html" data-animate>
+              <div class="eyebrow">About</div>
+              <h3>Professional biography</h3>
+              <p>Her background, university roles, and family-centered approach to intervention.</p>
+            </a>
+            <a class="panel" href="research.html" data-animate>
+              <div class="eyebrow">Research</div>
+              <h3>Current projects</h3>
+              <p>Telehealth coaching, autism support, TBI systems, military family interventions, and Spanish-language adaptation.</p>
+            </a>
+            <a class="panel" href="publications.html" data-animate>
+              <div class="eyebrow">Publications</div>
+              <h3>Selected scholarship</h3>
+              <p>Feature publications, book chapters, and an organized format for future updates.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© <span data-year></span> Dr. Megan Kunze</div>
+        <div>University of Oregon</div>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
